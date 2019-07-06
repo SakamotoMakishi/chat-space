@@ -1,0 +1,43 @@
+.flash-box
+.wrapper
+  .chat-side
+    .side-header
+      %p.side-header__user-name makishi
+      %ul.user-menu
+        %li.user-menu__edit-user
+          = link_to '/' do
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          = link_to '/' do
+            %i.fa.fa-cog
+    .groups
+      = link_to '/' do
+        .group
+          %p.group__group-name あああ
+          %p.group__latest-message まだメッセージがありません
+  .chat-main
+    .main-header
+      .current-group{data:{group_id: "1804"}}
+        %h2.current-group__name aaa
+        %ul.member-list
+          Member：
+          %li.member-list__member makishi
+      = link_to '/' do
+        .main-header__edit-btn Edit
+    .messages
+      .message{data:{message_id: "4483"}}
+        .upper-info
+          %p.upper-info__user makishi
+          %p.upper-info__date 2019/07/06(Sat) 16:52:00
+        %p.message__text test
+    .form
+      %form#new_message.new-message{accept:{charset: "UTF-8"}, action:  "/groups/1804/messages", enctype: "multipart/form-data", method: "post"}
+        %input.input-text{name: "utf8", type: "hidden", value: "✓"}/
+        %input{name: "authenticity_token", type: "hidden", value: "GPsTZd/UWwJO+3ar1msZam5yv95dWKFBptXZ58iQ+LjHkdb4tMsTmOJ1g8KlRBKTvkJ1Bk+JiiqMbIPqoQ5WbA=="}/
+        .input-box
+          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+          %label.image-label{for: "message_image"}
+            %i.fa.fa-image
+            %input#message_image.image-label__input{name: "message[image]", type: "file"}/
+        %input.new-message__submit-btn{data:{"disable-with": "Send"}, name: "commit", type: "submit", value: "Send"}/
+
