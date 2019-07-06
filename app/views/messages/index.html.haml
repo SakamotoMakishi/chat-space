@@ -17,7 +17,7 @@
           %p.group__latest-message まだメッセージがありません
   .chat-main
     .main-header
-      .current-group{"data-group_id" => "1804"}
+      .current-group{data:{group_id: "1804"}}
         %h2.current-group__name aaa
         %ul.member-list
           Member：
@@ -25,7 +25,7 @@
       = link_to '/' do
         .main-header__edit-btn Edit
     .messages
-      .message{"data-message_id" => "4483"}
+      .message{data:{message_id: "4483"}}
         .upper-info
           %p.upper-info__user makishi
           %p.upper-info__date 2019/07/06(Sat) 16:52:00
