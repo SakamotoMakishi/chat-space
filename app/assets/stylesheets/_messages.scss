@@ -28,7 +28,7 @@ html{
           justify-content: space-between;
           width: 100%;
           font-weight: bold;
-          .side-header__user-name{
+          &__user-name{
             width: 300px;
             color: white;
             float: left;
@@ -36,13 +36,13 @@ html{
           .user-menu{
             display: flex;
             color:white;
-            .user-menu__edit-user{
+            &__edit-user{
                 margin-left: 0.3rem;
                 .fa.fa-edit{
                   color:white;
                 }
             }
-            .user-menu__new-group{
+            &__new-group{
                 margin-left: 0.3rem;
                 i.fa.fa-cog{
                   color:white;
@@ -58,11 +58,11 @@ html{
           .group{
             margin-bottom: 40px;
             color:white;
-            .group__group-name{
+            &__group-name{
               font-size: 15px;
               margin-bottom: 5px;
             }
-            .group__latest-message{
+            &__latest-message{
               font-size: 11px;
             }
           }
@@ -81,7 +81,7 @@ html{
             font-size: 20px;
             color: #333;
             margin-top: 35px;
-            .current-group__name{
+            &__name{
               font-size: 100%;
               font-weight: normal;
             }
@@ -92,7 +92,7 @@ html{
               color: #999999;
             }
           }
-          .main-header__edit-btn{
+          &__edit-btn{
             height: 40px;
             line-height: 40px;
             padding: 0 20px;
@@ -111,18 +111,18 @@ html{
             .upper-info{
               display: flex;
               margin-bottom: 10px;
-              .upper-info__user{
+              &__user{
                 color: #434a54;
                 font-size: 16px;
                 font-weight: bold;
               }
-              .upper-info__date{
+              &__date{
                 color: #999999;
                 font-size: 12px;
                 margin-left: 10px;
               }
             }
-            .message__text{
+            &__text{
               color: #434a54;
               font-size: 14px;
               margin-bottom: 10px;
@@ -143,7 +143,7 @@ html{
             .input-box{
               position: relative;
               width: 100%;
-              .input-box__text{
+              &__text{
                 height: 50px;
                 width: 100%;
                 padding: 0 40px 0 10px;
@@ -163,12 +163,12 @@ html{
                   text-rendering: auto;
                   -webkit-font-smoothing: antialiased;
                 }
-                .image-label__input{
+                &__input{
                    display: none;
                 }
               }
             }
-            .new-message__submit-btn{
+            &__submit-btn{
               width: 100px;
               height: 50px;
               padding: 0 30px;
