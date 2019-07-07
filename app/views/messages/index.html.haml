@@ -2,13 +2,14 @@
 .wrapper
   .chat-side
     .side-header
-      %p.side-header__user-name makishi
+      %p.side-header__user-name
+        = current_user.name
       %ul.user-menu
         %li.user-menu__edit-user
           = link_to '/' do
             %i.fa.fa-edit
         %li.user-menu__new-group
-          = link_to '/' do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
     .groups
       = link_to '/' do
@@ -22,7 +23,7 @@
         %ul.member-list
           Member：
           %li.member-list__member makishi
-      = link_to '/' do
+      = link_to destroy_user_session_path, method: :delete do
         .main-header__edit-btn Edit
     .messages
       .message{data:{message_id: "4483"}}
