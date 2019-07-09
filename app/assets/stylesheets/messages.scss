@@ -57,13 +57,15 @@ html{
           overflow: scroll;
           .group{
             margin-bottom: 40px;
-            color:white;
-            &__group-name{
+            &__name{
               font-size: 15px;
               margin-bottom: 5px;
+              color: white;
             }
-            &__latest-message{
+            &__message{
               font-size: 11px;
+              color:white;
+              margin-bottom: 40px;
             }
           }
         }
@@ -164,7 +166,7 @@ html{
                   -webkit-font-smoothing: antialiased;
                 }
                 &__input{
-                   display: none;
+                    display: none;
                 }
               }
             }
