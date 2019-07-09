@@ -1,12 +1,10 @@
-class MessagesController < ApplicationController
+class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    #@group = Group.find(params[:group_id])
   end
 
   def edit
-
   end
 
   def new
@@ -30,5 +28,6 @@ class MessagesController < ApplicationController
   def group_params
     params.require(:group).permit(:name, user_ids: [] )
   end
+
 
 end
