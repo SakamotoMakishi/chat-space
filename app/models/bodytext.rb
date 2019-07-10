@@ -1,0 +1,2 @@
+class Bodytext < ApplicationRecord
+end

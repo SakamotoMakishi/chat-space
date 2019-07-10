@@ -4,18 +4,18 @@
     .chat-main
       .main-header
         .current-group{data:{group_id: "1804"}}
-          %h2.current-group__name aaa
-          %ul.member-list
+          .current-group__name aaa
+          .member-list
             Member：
-            %li.member-list__member makishi
+            .member-list__member makishi
         = link_to 'edit' do
           .main-header__edit-btn Edit
       .messages
         .message{data:{message_id: "4483"}}
           .upper-info
-            %p.upper-info__user makishi
-            %p.upper-info__date 2019/07/06(Sat) 16:52:00
-          %p.message__text test
+            .upper-info__user makishi
+            .upper-info__date 2019/07/06(Sat) 16:52:00
+          .message__text test
       .form
         %form#new_message.new-message{accept:{charset: "UTF-8"}, action:  "/groups/1804/messages", enctype: "multipart/form-data", method: "post"}
           %input.input-text{name: "utf8", type: "hidden", value: "✓"}/
