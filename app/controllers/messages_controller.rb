@@ -40,4 +40,6 @@ class MessagesController < ApplicationController
     params.require(:group).permit(:name, user_ids: [] )
   end
 
+
+  
 end
