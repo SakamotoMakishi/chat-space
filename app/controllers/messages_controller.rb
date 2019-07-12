@@ -1,15 +1,12 @@
 class MessagesController < ApplicationController
-  before_action :set_group, only: [:edit, :update]
+  before_action :set_group
 
   def index
+    @message = Message.new
+    @messages = @group.messages.includes(:user)
   end
 
   def edit
-  end
-
-  def new
-    @group = Group.new
-    @group.users << current_user
   end
 
   def create
@@ -23,23 +20,12 @@ class MessagesController < ApplicationController
     end
   end
 
-  def update
-    if @group.update(group_params)
-      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
-    else
-      render :edit
-    end
+  private
+  def message_params
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
   def set_group
     @group = Group.find(params[:group_id])
   end
-
-  private
-  def group_params
-    params.require(:group).permit(:name, user_ids: [] )
-  end
-
-
-  
 end
