@@ -3,26 +3,25 @@
     = render 'messages/index'
     .chat-main
       .main-header
-        .current-group{data:{group_id: "/"}}
-          .current-group__name aaa
+        .current-group
+          .current-group__name
+            = @group.name
           .member-list
             Member：
-            .member-list__member makiship
+            .member-list__member
+              makishi
+              /- current_user.groups.each do |group|
+              /= current_user.name
         = link_to 'edit' do
           .main-header__edit-btn Edit
       .messages
-        .message{data:{message_id: "/"}}
-          = message.user.name
-          .upper-info
-            .upper-info__user
-              = message.created_at.strftime("%Y/%m/%d %H:%M")C
-            .upper-info__date 2019/07/06(Sat) 16:52:00
-          .message__text te
+        = render @messages
       .form
-        = form_for [@group,@message] do |f|
-          = f.text_field :content, class: 'new__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'image-label' do
-              = fa_icon 'picture-o', class: 'icon'
-              = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'
+        .message
+          = form_for [@group,@message] do |f|
+            .message-box
+              = f.text_field :content, class: 'message-box__text', placeholder: 'type a message'
+              = f.label :image, class: 'message-box__image' do
+                = fa_icon 'picture-o', class: 'fa'
+                = f.file_field :image, class: 'hidden'
+              = f.submit 'Send', class: 'submit'
