@@ -45,11 +45,11 @@ $(function() {
             };
         }
         else {
-          appendNo_User_HTML("一致するユーザーが見つかりません");
+          appendNo_User_HTML("そんな人はおらん！！");
         }
       })
       .fail(function() {
-        alert('エラーが発生しました');
+        alert('んーエラーでーす！！！');
       })
     });
   $(document).on('click', '.user-search-add', function () {

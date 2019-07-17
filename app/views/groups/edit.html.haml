@@ -28,8 +28,7 @@
             %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}/
             %p.chat-group-user__name
             = current_user.name
-            %p.chat-group-user__name
-              = render partial: "groups/user", collection: @users
+          = render partial: "groups/user", collection: @users
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
