@@ -9,9 +9,8 @@
           .member-list
             Member：
             .member-list__member
-              makishi
-              /- current_user.groups.each do |group|
-              /= current_user.name
+              - @group.users.each do |user|
+                = user.name
         = link_to 'edit' do
           .main-header__edit-btn Edit
       .messages
