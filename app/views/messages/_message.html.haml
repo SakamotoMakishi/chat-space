@@ -1,7 +1,7 @@
-.message
+.message{"data-message-id": "#{message.id}"}
   .upper-info
     .upper-info__user
-      = current_user.name
+      = message.user.name
     .upper-info__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
