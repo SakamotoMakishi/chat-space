@@ -103,7 +103,7 @@ html{
             color: #38aef0;
           }
         }
-        .messages{
+        .message_list{
           height: calc(100vh - 190px);
           padding: 46px 40px;
           background-color: #fafafa;
@@ -135,14 +135,14 @@ html{
           height: 90px;
           padding: 20px 40px;
           background-color: #ddd;
-          .message{
+          .message_form{
             display: flex;
             .message-box{
               position: relative;
-              width: 945px;
+              width: 100%;
               &__text{
                 height: 50px;
-                width: 100%;
+                width: 945px;
                 padding: 0 40px 0 10px;
                 color: #434a54;
                 border-style: none;

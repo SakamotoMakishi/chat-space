@@ -13,10 +13,10 @@
                 = user.name
         = link_to 'edit' do
           .main-header__edit-btn Edit
-      .messages
+      .message_list
         = render @messages
       .form
-        .message
+        .message_form
           = form_for [@group,@message] do |f|
             .message-box
               = f.text_field :content, class: 'message-box__text', placeholder: 'type a message'
