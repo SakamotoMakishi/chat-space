@@ -46,6 +46,7 @@ $(function(){
     .always(function(){ //リロードせずにSENDボタンを推せる
       $('.submit').prop('disabled', false);
     })
+  });
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーー自動更新の記述ーーーーーーーーーーーーーーーーーーーーーーーーー
     var reloadMessages = function(){
       var last_message_id = $('.message:last').data('message-id');//カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
@@ -68,7 +69,6 @@ $(function(){
         })
       }
     setInterval(reloadMessages, 3000);
-  });
 });
 
 
