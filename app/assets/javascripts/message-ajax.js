@@ -48,6 +48,11 @@ $(function(){
     })
   });
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーー自動更新の記述ーーーーーーーーーーーーーーーーーーーーーーーーー
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){  //現在いるグループにしか入力を影響させないための記述
+      //参考記事  http://alphasis.info/2013/07/javascript-locationobject-href/
+      //         https://www.sejuku.net/blog/25583
+      //         https://www.mnet.ne.jp/~nakama/
+      //         https://qiita.com/YJ2222/items/5ae02e7e72b5367ee4f1
     var reloadMessages = function(){
       var last_message_id = $('.message:last').data('message-id');//カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
         $.ajax({
@@ -69,6 +74,7 @@ $(function(){
         })
       }
     setInterval(reloadMessages, 3000);
+  }
 });
 
 
