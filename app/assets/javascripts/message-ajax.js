@@ -20,7 +20,7 @@ $(function(){
                   </div>`
     return html;
   }
-  //非同期通信の記述
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーー非同期通信の記述ーーーーーーーーーーーーーーーーーーーーーーーーー
   $('#new_message').on('submit',function(e){
     e.preventDefault();     //submitされた処理を止める。
     var message = new FormData(this);
@@ -34,8 +34,8 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      var html = messageHTML(message);  //messageHTMLを引数でappendに渡す。↓
-      $('.message_list').append(html)     //引数を受け取る。↑
+      var html = messageHTML(message);  //messageHTMLを変数でappendに渡す。↓
+      $('.message_list').append(html)     //変数を受け取る。↑
       $('#new_message')[0].reset();  //text送信後入力した値を消す。
       $('.message_list').animate({ scrollTop: $('.message_list')[0].scrollHeight});  //メッセージ入力後スクロールで一番下まで戻す。
       return false
@@ -46,13 +46,13 @@ $(function(){
     .always(function(){ //リロードせずにSENDボタンを推せる
       $('.submit').prop('disabled', false);
     })
-    //自動更新の記述
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーー自動更新の記述ーーーーーーーーーーーーーーーーーーーーーーーーー
     var reloadMessages = function(){
       var last_message_id = $('.message:last').data('message-id');//カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
         $.ajax({
-          url: "api/messages",//サーバー指定
-          type: 'GET',  //ルーティングで設定
-          dataType: 'json',  //ルーティングで設定したURLを指定
+          url: "api/messages",//ルーティングを記述rake route参照
+          type: 'GET',  //ルーティングを記述      rake route参照
+          dataType: 'json',
           data: {last_id: last_message_id}   //dataオプションでリクエストに値を含める
         })
         .done(function(messages){
