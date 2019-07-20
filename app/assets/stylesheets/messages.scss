@@ -136,13 +136,13 @@ html{
           padding: 20px 40px;
           background-color: #ddd;
           .message_form{
-            display: flex;
+              width: 100%;
             .message-box{
               position: relative;
-              width: 100%;
+              margin-right: 90px;
               &__text{
                 height: 50px;
-                width: 945px;
+                width: 100%;
                 padding: 0 40px 0 10px;
                 color: #434a54;
                 border-style: none;
@@ -168,7 +168,6 @@ html{
                 width: 100px;
                 height: 50px;
                 padding: 0 30px;
-                margin-left: 15px;
                 background-color: #38aef0;
                 color: white;
                 cursor: pointer;
