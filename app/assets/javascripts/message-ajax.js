@@ -70,7 +70,7 @@ $(function(){
           })
         })
         .fail(function() {
-          alert('自動更新失敗しました！');
+          alert('自動更新失敗しました');
         })
       }
     setInterval(reloadMessages, 3000);

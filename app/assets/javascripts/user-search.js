@@ -5,7 +5,7 @@ $(function() {
       var html = `<div id="user-search-result">
                     <div class="chat-group-user clearfix">
                       <p class="chat-group-user__name">${user.name}</p>
-                      <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">仲間に加える!</a>
+                      <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
                     </div>
                   </div>`
       search_name.append(html);
@@ -22,7 +22,7 @@ $(function() {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
                   <p class='chat-group-user__name'>${user_name}</p>
-                  <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>追い出す！</div>
+                  <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
     group_member.append(html);
   }
@@ -45,11 +45,11 @@ $(function() {
             };
         }
         else {
-          appendNo_User_HTML("そんな人はおらん！！");
+          appendNo_User_HTML("一致するユーザーがいません");
         }
       })
       .fail(function() {
-        alert('んーエラーでーす！！！');
+        alert('エラーが発生しました');
       })
     });
   $(document).on('click', '.user-search-add', function () {
